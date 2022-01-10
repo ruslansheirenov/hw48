@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from shopapp.views import index_view, sale_view, create_view, update_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_view, name="index"),
+    path('sale/<int:pk>/', sale_view, name="sale_view"),
+    path('sale/add/', create_view, name="create"),
+    path('sale/<int:pk>/update', update_view, name="update"),
 ]

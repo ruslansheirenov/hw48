@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1>Selling</h1>
+    {% for product in products %}
+        <div class='conn'>
+        <h3>{{ product.product_name }}</h3>
+        <a href="{% url "sale_view" product.pk %}">More...</a>
+        </div>
+    {% endfor %}
+{% endblock %}
