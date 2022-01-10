@@ -1,0 +1,24 @@
+[
+{
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+        "product_name": "IPhine 13 pro",
+        "description": "aaaaaaaaaaaaaaa",
+        "category": "Телефоны",
+        "remainder": 15,
+        "price": "600.00"
+    }
+},
+{
+    "model": "shopapp.product",
+    "pk": 6,
+    "fields": {
+        "product_name": "Телевизор Philips 43PUS7406",
+        "description": "Телевизор 4K; диагональ экрана 43\"; разрешение 3840 х 2160; Smart TV; поддержка Wi-Fi есть; частота развертки 60 Гц; поддержка DVB-T2 есть",
+        "category": "Телевизоры",
+        "remainder": 2,
+        "price": "1200.00"
+    }
+}
+]

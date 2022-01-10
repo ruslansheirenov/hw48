@@ -21,10 +21,10 @@ def sale_view(request, pk):
 
 def create_view(request):
     if request.method == 'GET':
-        form = NoteForm()
+        form = ProductForm()
         return render(request, 'create.html', {"form": form})
     else:
-        form = NoteForm(data=request.POST)
+        form = ProductForm(data=request.POST)
         if form.is_valid():
             product_name = form.cleaned_data.get('product_name')
             description = form.cleaned_data.get('description')
@@ -32,7 +32,7 @@ def create_view(request):
             remainder = request.POST.get('remainder')
             price = request.POST.get('price')
             new_sale = Product.objects.create(product_name=product_name, description=description, category=category, remainder=remainder, price=price)
-            return redirect("index")
+            return redirect("sale_view", pk=new_sale.pk)
         return render(request, 'create.html', {"form": form})
 
 def update_view(request, pk):
@@ -54,3 +54,11 @@ def update_view(request, pk):
             product.save()
             return redirect("sale_view", pk)
         return render(request, 'update.html', {"product": product, "form": form})
+
+def delete_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        return render(request, "delete.html", {"product": product})
+    else:
+        product.delete()
+        return redirect("index")

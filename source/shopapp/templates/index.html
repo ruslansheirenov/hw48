@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-	<h1>Selling</h1>
+    <div class='init'>
+	<h1 class="h1">Selling</h1>
     {% for product in products %}
-        <div class='conn'>
+        <div class='border-bottom border-danger border-3 conn'>
         <h3>{{ product.product_name }}</h3>
         <a href="{% url "sale_view" product.pk %}">More...</a>
         </div>

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from shopapp.views import index_view, sale_view, create_view, update_view
+from shopapp.views import index_view, sale_view, create_view, update_view, delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('sale/<int:pk>/', sale_view, name="sale_view"),
     path('sale/add/', create_view, name="create"),
     path('sale/<int:pk>/update', update_view, name="update"),
+    path('sale/<int:pk>/delete', delete_view, name="delete"),
 ]
